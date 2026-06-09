@@ -368,6 +368,9 @@
     jaferTables: function() {
       return this.jaferAll("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").map(r => r.name);
     },
+    jaferViews: function() {
+    return this.jaferAll("SELECT name FROM sqlite_master WHERE type='view'").map(r => r.name);
+},
 
     jaferVersion: function() {
       var row = this.jaferGet('SELECT sqlite_version() AS version');
