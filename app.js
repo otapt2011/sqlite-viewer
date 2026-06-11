@@ -158,7 +158,7 @@ function resetState() {
 function loadTables() {
     if (!db) return;
     try {
-        currentTables = db.jaferTables();  // returns array of table names
+        currentTables = db.jaferViews();  // returns array of table names
         tableCount.textContent = currentTables.length;
         renderTableList();
     } catch (err) {
